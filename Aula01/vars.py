@@ -60,3 +60,6 @@ n -= 1 # = {n = n - 1}
 
 user_input = input("insira um valor: ") #<- retornar str
 
+int(user_input) #<- converte do tipo str para int
+str(user_input) #<- converte do tipo para str
+float(user_input) #<- converte do tipo para float
