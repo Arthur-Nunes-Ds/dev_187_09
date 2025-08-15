@@ -5,6 +5,7 @@ from os import system as cmd
 sytile_str = {
     "red":"\033[31m",#<- text vermelho 
     "verde":"\033[32m", #<- text verde
+    "amrelo":"\033[93m", #<- text amrelo
     "normal":"\033[0m", #<- text normal
     "negrito":"\033[1m" #<- negrito
 }
@@ -60,16 +61,12 @@ def is_legal_selecte(is_x = True,input_user = ""):
 #ver que ganhou
 def vitoria():
     #função interna :)
-    def is_velha(is_linha = True, is_coluna = True, is_diagonal = True):
-        tabuleiro_cord = len(tabuleiro_cord_x) + (len(tabuleiro_cord_o)+1) 
-        if tabuleiro == 9 and len(tabuleiro_cord_o) == 8:
+    def is_velha():
+        if len(tabuleiro_cord_x) == 5 and len(tabuleiro_cord_o) == 4:
             global is_cheio
-            is_cheio = True 
-
-        if is_cheio and not is_linha and not is_coluna and not is_diagonal:
-            print("deu velha")
+            is_cheio = True
         else:
-            return
+            return 
         
     #caso 1: linhas
     for l in range(0,3):
@@ -83,7 +80,7 @@ def vitoria():
             print(f'{sytile_str['verde']}O: "O", ganhou ^.^{sytile_str["normal"]}')
             return True
         else:
-            is_velha(is_linha=False)
+            is_velha()
             pass
 
     #caso 2: colunas
@@ -99,7 +96,7 @@ def vitoria():
             print(f'{sytile_str['verde']}O: "X", ganhou ^.^{sytile_str["normal"]}')
             return True
         else: 
-            is_velha(is_coluna=False)
+            is_velha()
         
         reperte_o = 0
         for cord_o in tabuleiro_cord_o:
@@ -110,7 +107,7 @@ def vitoria():
             print(f'{sytile_str['verde']}O: "O", ganhou ^.^{sytile_str["normal"]}')
             return True
         else:
-            is_velha(is_coluna=False)
+            is_velha()
     
     #caso 3: diagonais        
     condador1_x = 0 ;condador2_x = 0
@@ -124,7 +121,7 @@ def vitoria():
             print(f'{sytile_str['verde']}O: "X", ganhou ^.^{sytile_str["normal"]}')
             return True
     else:
-        is_velha(is_diagonal=False)
+        is_velha()
 
     condador1_o = 0 ;condador2_o = 0
     for to in tabuleiro_cord_o:
@@ -136,11 +133,12 @@ def vitoria():
             print(f'{sytile_str['verde']}O: "O", ganhou ^.^{sytile_str["normal"]}')
             return True
     else:
-        is_velha(is_diagonal=False)
+        is_velha()
     
     return False
     
 def game():
+    global is_cheio
     def victory():
         if vitoria() or velha == True:
             print(25*"-=","Deseja jogar denovo? =",24*"-=")
@@ -154,6 +152,7 @@ def game():
              tabuleiro.clear()
              tabuleiro_cord_x.clear(),tabuleiro_cord_o.clear()
              tabuleiro = [["1","2","3"], ["4","5","6"], ["7","8","9"]]
+             is_cheio = False
              game()
             else:
              print(25*"-=","Ok tachu :) =",28*"-=")
@@ -169,7 +168,7 @@ def game():
     cmd("cls")
     print_tabuleiro()
     #não pode usar while True por que se não ele não pede o input do user por algum motivo
-    while True:
+    while is_cheio == False:
         is_loop = True
         print(25*"-=","é vez do \"X\" =",34*"-=")
         i_user = input("Digite o número que vócê quer colocar o \"X\": ")
@@ -181,6 +180,24 @@ def game():
                 is_loop = False
             victory()
         victory()
+        #velha
+        if is_cheio == True:
+            print(15*"-=",f"{sytile_str['roxo']}Que pena ninguem ganho deu impate quer joga denovo?{sytile_str['normal']}","="+13*"-=",sep="")
+            i_user = input("s = sim e n = não: ")
+            #rest o jogo
+            if i_user.upper() == "S":
+             cmd("cls")
+             #fala para o pytho que eu estou pegandoas var global's não declaranto outra var
+             global tabuleiro, tabuleiro_cord_o, tabuleiro_cord_x
+             #resta a matrix e limpa as vars de codernadas
+             tabuleiro.clear()
+             tabuleiro_cord_x.clear(),tabuleiro_cord_o.clear()
+             tabuleiro = [["1","2","3"], ["4","5","6"], ["7","8","9"]]
+             is_cheio = False
+             game()
+            else:
+             print(25*"-=","Ok tachu :) =",28*"-=")
+             exit()
 
         print(25*"-=","é vez do \"O\" =",34*"-=")
         i_user = input("Digite o número que vócê quer colocar o \"O\": ")
