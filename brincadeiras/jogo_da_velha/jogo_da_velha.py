@@ -16,8 +16,28 @@ velha = False
 is_cheio = False
 
 def print_tabuleiro():
-    for i in tabuleiro:
-        print(i)
+    l0 = ""
+    l1 = ""
+    l2 = ""
+    #add linha a linha a l0,l1,l2
+    for i in range(len(tabuleiro)):
+        for x in tabuleiro[i]:
+            if x in tabuleiro[0]:
+                l0 = l0 + x
+            elif x in tabuleiro[1]:
+                l1 = l1+x
+            elif x in tabuleiro[2]:
+                l2 = l2+x
+
+    def p_l(l):
+        print(" "*43, end="")
+        for i in range(3):
+            print(f"|  {l[i]}  |  ", end="")
+        return print()
+    
+    print(f"{"-="*25} Tabuleiro ={"-="*36}")
+    #executa a fun 3vez de um vez
+    p_l(l0);p_l(l1);p_l(l2)
     return
 
 #aultualiza com o input do user e já ver se a jogada é legal
@@ -27,6 +47,7 @@ def is_legal_selecte(is_x = True,input_user = ""):
         #ignore é continua 
         pass
     else:
+        len
         print(f"{sytile_str['red']}Digite uma opação valida!!{sytile_str['normal']}") 
         #erro de opção
         return False 
@@ -160,9 +181,9 @@ def game():
         else: 
             return
         
-    print(25*"-=","Olá seja bem vindo aou jogo da velha. =",24*"-=")
-    print(25*"-=","O primeiro a jogar é o \"X\" ! =",29*"-=")
-    print(25*"-=","Precione enter para continuar. = ",28*"-=")
+    print(25*"-=",f"Olá seja bem vindo aou jogo da velha. ={24*"-="}")
+    print(25*"-=",f"O primeiro a jogar é o \"X\" ! ={29*"-="}")
+    print(25*"-=",f"Precione enter para continuar. ={28*"-="}")
     input()
     #limpara a tela
     cmd("cls")
@@ -170,7 +191,7 @@ def game():
     #não pode usar while True por que se não ele não pede o input do user por algum motivo
     while is_cheio == False:
         is_loop = True
-        print(25*"-=","é vez do \"X\" =",34*"-=")
+        print(25*"-=",f"é vez do \"X\" ={34*"-="}")
         i_user = input("Digite o número que vócê quer colocar o \"X\": ")
         cmd("cls")
         #enquanto não for uma jogada legal ficara forçando o user a digita um jogada legal
@@ -182,7 +203,7 @@ def game():
         victory()
         #velha
         if is_cheio == True:
-            print(15*"-=",f"{sytile_str['roxo']}Que pena ninguem ganho deu impate quer joga denovo?{sytile_str['normal']}","="+13*"-=",sep="")
+            print(15*"-=",f"{sytile_str['amrelo']} Que pena ninguem ganho deu impate quer joga denovo? {sytile_str['normal']}","="+11*"-=",sep="")
             i_user = input("s = sim e n = não: ")
             #rest o jogo
             if i_user.upper() == "S":
@@ -208,5 +229,4 @@ def game():
                 is_loop = True
             victory()
         victory()
-
 game()
