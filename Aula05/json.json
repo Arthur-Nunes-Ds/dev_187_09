@@ -1,0 +1,9 @@
+{
+    "nome" : "nome",
+    "idade": 0,
+    "list" : ["0",1],
+    "dic":{
+        "nome2": "nome2",
+        "idade2": "idade2"
+    }
+}

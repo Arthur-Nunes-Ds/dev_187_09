@@ -57,5 +57,5 @@ print(",".join(lst1))
 str1 = "a b c d e"
 #criar uma lista separa do pelo caracter
 lst_1 = str1.split(" ")
-print(lst)
+print(lst_1)
 #-------------------------------------------------------------------------------------------
