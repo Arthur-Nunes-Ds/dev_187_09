@@ -27,7 +27,7 @@ nomes = ["Arthur", "João", "Maria", "Pedro", "Ana", "Carlos"]
 nomes.sort()
 print(nomes)
 # index me retorna o n° do index
-print( nomes.index("João") )
+print(nomes.index("João") )
 print("-"*30)
 #------------------------------------------------------------------------------------------
 n = [1,1,1,1,1,1,1,1,1,23,4,5,4,4,367,22,528,58,42,57,62,47,254,4,8,254,82,458,6,8]
