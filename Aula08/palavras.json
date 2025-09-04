@@ -1,0 +1,18 @@
+{   "animal" : ["leão", "tigre", "elefante", "girafa", "zebra", "cavalo", "macaco", "urso", "lobo", "raposa",
+        "cachorro", "gato", "coelho", "panda", "cervo", "hipopótamo", "rinoceronte", "antílope", "búfalo", "camelo",
+        "canguru", "tamanduá", "pinguim", "águia", "falcão", "coruja", "papagaio", "arara", "jacaré", "crocodilo",
+        "cobra", "tartaruga", "tatu", "porco-espinho", "ouriço", "golfinho", "baleia", "tubarão", "foca", "leão-marinho",
+        "texugo", "doninha", "guaxinim", "suricato", "lhama", "alpaca", "galo", "galinha", "pato", "cisne"],
+
+    "cep" : ["Brasil", "Estados Unidos", "Canadá", "Japão", "França", "Alemanha", "Itália", "China", "Índia", "Austrália",
+        "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Fortaleza", "Salvador", "Recife", "Porto Alegre", "Manaus", "Brasília",
+        "Califórnia", "Texas", "Nova York", "Flórida", "Illinois", "Alasca", "Nevada", "Arizona", "Geórgia", "Ohio",
+        "Paris", "Londres", "Berlim", "Roma", "Tóquio", "Pequim", "Seul", "Moscou", "Cidade do México", "Buenos Aires",
+        "Argentina", "Chile", "Colômbia", "Peru", "Egito", "África do Sul", "Rússia", "Noruega", "Suécia", "Espanha"],
+
+    "comida" : ["pizza", "hambúrguer", "sushi", "lasanha", "macarrão", "feijoada", "churrasco", "taco", "burrito", "curry",
+        "arroz", "feijão", "salada", "frango assado", "bife", "nhoque", "esfiha", "kibe", "pastel", "coxinha",
+        "empada", "pão de queijo", "torta de frango", "risoto", "moqueca", "acarajé", "bacalhau", "panqueca", "omelete", "quibe cru",
+        "estrogonofe", "sopa", "caldo verde", "canja", "lasanha de berinjela", "yakisoba", "temaki", "ramen", "gnocchi", "carbonara",
+        "picanha", "costela", "linguiça", "farofa", "polenta", "cuscuz", "tabule", "salpicão", "bolonhesa", "fricassê"]
+}

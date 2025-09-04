@@ -4,7 +4,7 @@ import json
 from time import sleep as delay
 
 #abre o arquivo
-with open("brincadeiras/forca/palavras.json", "r", encoding="utf-8") as f:
+with open("Aula08/palavras.json", "r", encoding="utf-8") as f:
     cadegorias = dict(json.load(f))
 
 #como são dois comandos não pode ser lambada; só server para limpar o terminal
